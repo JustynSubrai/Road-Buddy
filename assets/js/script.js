@@ -1,14 +1,13 @@
-fetch("https://yelp-graphql1.p.rapidapi.com/v3/graphql", {
-	"method": "POST",
-	"headers": {
-		"authorization": "undefined",
-		"x-rapidapi-host": "yelp-graphql1.p.rapidapi.com",
-		"x-rapidapi-key":"
-	}
+var key = config.secretKey;
+fetch("https://api.yelp.com/v3/businesses/search?location=NYC", {
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer " + key
+  }
 })
 .then(response => {
-	console.log(response);
+  console.log(response);
 })
 .catch(err => {
-	console.error(err);
+  console.error(err);
 });
