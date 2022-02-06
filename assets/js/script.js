@@ -34,6 +34,6 @@ fetch ('https://api.opentripmap.com/0.1/en/places/geoname?name=Westwood&country=
 
 
 
-        console.log(data.lon)
+        console.log(data)
         console.log(data.lat)
     })
