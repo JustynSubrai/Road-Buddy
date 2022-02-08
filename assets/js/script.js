@@ -1,7 +1,7 @@
 var mapEL = $("#map")
 
 function thing() {
-  console.log(document.querySelector("#thing").value)
+  // console.log(document.querySelector("#thing").value)
   fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=5&location=" + document.querySelector("#thing").value, {
     "method": "GET",
     "headers": {
@@ -45,6 +45,12 @@ function displayMap(lat,long) {
 
 };
 
+function setShop(response) {
+localStorage.setItem("Location" + localStorage.length, document.querySelector("#thing").value);
+}
+
+
+
 function displayShop(response) {
   var dataEl = (`<div class="flex-wrap">`);
   for (let i=0; i < response.businesses.length; i++) {
@@ -64,7 +70,7 @@ function displayShop(response) {
     </div>`)
   }
   $("#dataResponse").html(dataEl)
-    
+    setShop();
     // document.querySelector("#testText").innerHTML = response.businesses[0].name
     // document.querySelector("#testImage").setAttribute("src", response.businesses[0].image_url)
     // document.getElementById("address").textContent = response.businesses[0].location.display_address
@@ -73,7 +79,6 @@ function displayShop(response) {
   }
 
 document.getElementById("thingBtn").addEventListener("click", thing);
-
 
 
 // Fetch opentripmap below
@@ -91,7 +96,8 @@ document.getElementById("thingBtn").addEventListener("click", thing);
 // https://api.opentripmap.com/0.1/­{lang}­/tiles/{layer}­/{z}­/{x}­/{y}.pbf?kinds={kinds}&rate={rate}&apikey={apikey}
 
 
-// Below isthe Modal that pops out an alert.
+// Below is the Modal that pops out an alert. Copied and pasted from Burma
+
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
   function openModal($el) {
@@ -137,3 +143,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+function getLocation() {
+  for (let i = 0; i < localStorage.length; i++) {
+    let previousOnes = localStorage.getItem("Location" + i)
+    console.log(previousOnes);
+    document.getElementById("locationsPull").innerHTML+= previousOnes + "</br>";
+   ;
+
+
+  }
+
+}
+
+getLocation();
