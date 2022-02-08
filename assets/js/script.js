@@ -1,4 +1,3 @@
-
 function thing() {
   console.log(document.querySelector("#thing").value)
   fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + document.querySelector("#thing").value, {
@@ -29,14 +28,16 @@ function thing() {
     console.log(response);
     document.querySelector("#testText").innerHTML = response.businesses[0].name
     document.querySelector("#testImage").setAttribute("src", response.businesses[0].image_url)
+    document.getElementById("address").textContent = response.businesses[0].location.display_address
+    document.querySelector("#cityName").textContent = response.businesses[0].location.city
+    document.getElementById('thing').value = "";
   })
   .catch(err => {
     console.error(err);
   });
 }
+
 document.getElementById("thingBtn").addEventListener("click", thing);
-
-
 // Fetch opentripmap below
 // fetch ('https://api.opentripmap.com/0.1/­en/tiles/pois­/10­/1/1.pbf&apikey=5ae2e3f221c38a28845f05b65aa94ae67c8a988c80831bd867503215') 
 //     .then(response => response.json())
