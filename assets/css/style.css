@@ -61,3 +61,8 @@ h2#testText {
      flex-basis: 0;
   }
 
+.banner {
+  width: 100%;
+  height: 400px;
+}
+
