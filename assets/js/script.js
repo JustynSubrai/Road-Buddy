@@ -32,7 +32,7 @@ function displayMap(lat,long) {
 	document.getElementById('map-container').innerHTML = "<div id='map'></div>";
 	let map = new L.map('map');
 
-	map.setView([lat, long], 15);
+	map.setView([lat, long], 20);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -54,27 +54,27 @@ localStorage.setItem("Location" + localStorage.length, document.querySelector("#
 function displayShop(response) {
   var dataEl = (`<div class="row">`);
   for (let i=0; i < response.businesses.length; i++) {
-
     var nameEl = response.businesses[i].name;
     var imageUrlEl = response.businesses[i].image_url;
     var addressEl = response.businesses[i].location.display_address;
-    var cityEl = response.businesses[i].rating;
+    var ratingEl = response.businesses[i].rating;
     if (priceEl === undefined) {
       $(priceEl).attr("display", "none")
     }
     var priceEl = response.businesses[i].price;
-
     dataEl = dataEl + (`
-    <div class="column">
+    <div  class = "column">
     <ul>
         <li>${nameEl}</li>
         <li>${addressEl}</li>
         <li><img src="${imageUrlEl}"></li>
-        <li>Rating: ${cityEl} / 5</li>
+        <li>Rating: ${ratingEl} / 5</li>
         <li>${priceEl}</li>
     </ul>
     </div>`)
   }
+
+
   $("#dataResponse").html(dataEl)
     setShop();
     // document.querySelector("#testText").innerHTML = response.businesses[0].name
