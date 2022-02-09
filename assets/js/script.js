@@ -18,7 +18,7 @@ function thing() {
     displayShop(response);
     // console.log(lat)
     // console.log(long)
-    // console.log(response);
+     console.log(response);
 
 
   })
@@ -32,7 +32,7 @@ function displayMap(lat,long) {
 	document.getElementById('map-container').innerHTML = "<div id='map'></div>";
 	let map = new L.map('map');
 
-	map.setView([lat, long], 20);
+	map.setView([lat, long], 15);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -50,22 +50,28 @@ localStorage.setItem("Location" + localStorage.length, document.querySelector("#
 }
 
 
-
+// Displays all the businesses in the City
 function displayShop(response) {
-  var dataEl = (`<div class="flex-wrap">`);
+  var dataEl = (`<div class="row">`);
   for (let i=0; i < response.businesses.length; i++) {
 
     var nameEl = response.businesses[i].name;
     var imageUrlEl = response.businesses[i].image_url;
     var addressEl = response.businesses[i].location.display_address;
-    var cityEl = response.businesses[i].location.city;
+    var cityEl = response.businesses[i].rating;
+    if (priceEl === undefined) {
+      $(priceEl).attr("display", "none")
+    }
+    var priceEl = response.businesses[i].price;
+
     dataEl = dataEl + (`
-    <div>
+    <div class="column">
     <ul>
         <li>${nameEl}</li>
         <li>${addressEl}</li>
         <li><img src="${imageUrlEl}"></li>
-        <li>${cityEl}</li>
+        <li>Rating: ${cityEl} / 5</li>
+        <li>${priceEl}</li>
     </ul>
     </div>`)
   }
@@ -144,10 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+//Below is the Local Storage for getting the locations
 
 function getLocation() {
   for (let i = 0; i < localStorage.length; i++) {
-    let previousOnes = localStorage.getItem("Location" + i)
+    let previousOnes = JSON.stringify(localStorage.getItem("Location" + i));
     console.log(previousOnes);
     document.getElementById("locationsPull").innerHTML+= previousOnes + "</br>";
    ;
