@@ -1,7 +1,7 @@
 var mapEL = $("#map")
 
 function thing() {
-  console.log(document.querySelector("#thing").value)
+  // console.log(document.querySelector("#thing").value)
   fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=5&location=" + document.querySelector("#thing").value, {
     "method": "GET",
     "headers": {
@@ -18,7 +18,7 @@ function thing() {
     displayShop(response);
     // console.log(lat)
     // console.log(long)
-    // console.log(response);
+     console.log(response);
 
 
   })
@@ -45,26 +45,38 @@ function displayMap(lat,long) {
 
 };
 
-function displayShop(response) {
-  var dataEl = (`<div class="flex-wrap">`);
-  for (let i=0; i < response.businesses.length; i++) {
+function setShop(response) {
+localStorage.setItem("Location" + localStorage.length, document.querySelector("#thing").value);
+}
 
+
+// Displays all the businesses in the City
+function displayShop(response) {
+  var dataEl = (`<div class="row">`);
+  for (let i=0; i < response.businesses.length; i++) {
     var nameEl = response.businesses[i].name;
     var imageUrlEl = response.businesses[i].image_url;
     var addressEl = response.businesses[i].location.display_address;
-    var cityEl = response.businesses[i].location.city;
+    var ratingEl = response.businesses[i].rating;
+    if (priceEl === undefined) {
+      $(priceEl).attr("display", "none")
+    }
+    var priceEl = response.businesses[i].price;
     dataEl = dataEl + (`
-    <div>
+    <div  class = "column">
     <ul>
         <li>${nameEl}</li>
         <li>${addressEl}</li>
         <li><img src="${imageUrlEl}"></li>
-        <li>${cityEl}</li>
+        <li>Rating: ${ratingEl} / 5</li>
+        <li>${priceEl}</li>
     </ul>
     </div>`)
   }
+
+
   $("#dataResponse").html(dataEl)
-    
+    setShop();
     // document.querySelector("#testText").innerHTML = response.businesses[0].name
     // document.querySelector("#testImage").setAttribute("src", response.businesses[0].image_url)
     // document.getElementById("address").textContent = response.businesses[0].location.display_address
@@ -73,7 +85,6 @@ function displayShop(response) {
   }
 
 document.getElementById("thingBtn").addEventListener("click", thing);
-
 
 
 // Fetch opentripmap below
@@ -91,7 +102,8 @@ document.getElementById("thingBtn").addEventListener("click", thing);
 // https://api.opentripmap.com/0.1/­{lang}­/tiles/{layer}­/{z}­/{x}­/{y}.pbf?kinds={kinds}&rate={rate}&apikey={apikey}
 
 
-// Below isthe Modal that pops out an alert.
+// Below is the Modal that pops out an alert. Copied and pasted from Burma
+
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
   function openModal($el) {
@@ -137,3 +149,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+//Below is the Local Storage for getting the locations
+
+function getLocation() {
+  for (let i = 0; i < localStorage.length; i++) {
+    let previousOnes = JSON.stringify(localStorage.getItem("Location" + i));
+    console.log(previousOnes);
+    document.getElementById("locationsPull").innerHTML+= previousOnes + "</br>";
+   ;
+
+
+  }
+
+}
+
+getLocation();
