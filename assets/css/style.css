@@ -11,6 +11,10 @@ body {
 h1.title {
   font-size: 45px;
   color: white;
+  display:flex ;
+  justify-content: center;
+  position: relative;
+  top: -43vh;
 }
 
 button {
@@ -65,4 +69,14 @@ h2#testText {
   width: 100%;
   height: 400px;
 }
+
+.instructions{
+  padding: 5px;
+  font: bold;
+  font-size: xx-large;
+  display:flex ;
+  justify-content: center;
+  
+}
+
 
