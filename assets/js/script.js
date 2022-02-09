@@ -52,7 +52,7 @@ localStorage.setItem("Location" + localStorage.length, document.querySelector("#
 
 // Displays all the businesses in the City
 function displayShop(response) {
-  var dataEl = (`<div class="row">`);
+  var dataEl = (`<div class="columns is-mobile  is-flex-wrap-wrap is-justify-content-center is-align-content-center">`);
   for (let i=0; i < response.businesses.length; i++) {
     var nameEl = response.businesses[i].name;
     var imageUrlEl = response.businesses[i].image_url;
@@ -63,15 +63,14 @@ function displayShop(response) {
     }
     var priceEl = response.businesses[i].price;
     dataEl = dataEl + (`
-    <div  class = "column">
-    <ul>
-        <li>${nameEl}</li>
-        <li>${addressEl}</li>
-        <li><img src="${imageUrlEl}"></li>
-        <li>Rating: ${ratingEl} / 5</li>
-        <li>${priceEl}</li>
+    <ul class = "column list" id="ulStyles">
+        <li class="list-content">${nameEl}</li>
+        <li class="list-content">${addressEl}</li>
+        <li class="list-content"><img src="${imageUrlEl}"></li>
+        <li class="list-content">Rating: ${ratingEl} / 5</li>
+        <li class="list-content">${priceEl}</li>
     </ul>
-    </div>`)
+    `)
   }
 
 
