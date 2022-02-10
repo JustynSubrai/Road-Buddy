@@ -3,47 +3,68 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Road-Buddy</title>
+      <title>Road Buddy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="assets\css\style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
+    <link rel = "icon" href ="assets/images/Road.png" type = "imageRoad">
   </head>
   <body>
+    <img class="banner" src="assets\better road.jpg" alt=" image of road in forest">
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Adventure Awaits
+        Road Buddy
       </h1>
-      <input id="thing" placeholder="Enter a City"><button id="thingBtn">Search</button>
+
+      <h2 class="instructions">Please input the city that you would like to visit.
+      </h2>
+      
+      <input id="thing" placeholder="Enter a City">
+            <button id="thingBtn">Search</button>
       <p class="subtitle" id="cityName"></p>
-      <div id="map"></div>
-    </div>
+      Previous Locations Searched:
+      <p id="locationsPull"></p>
+
+      </br>
+      </br>
+      
+      <div id="map-container"></div>
+
+      <button id="modal" class="js-modal-trigger" data-target="modal-js-example" > Business not showing up? Click me for instructions.</button>
+
   </section>
 
-  <div>
-    <h2 id="testText"></h2>
-    <p id="address"></p>
-    <a href="" id="link">
-      <img src="" alt="" id="testImage">
-    </a>
+  <div id="dataResponse" class="">
+
+    <div class="tile is-ancestor">
+      <div class="tile is-4 is-vertical is-parent">
+        <div class="tile is-child box">
+          <p class="title">About this Site</p>
+          <p>This webapp allows you the type in a certain location and it will show you the top 5 favored business in that area.Road Buddy helps people with the hardest decision we face today,"I want to try something new but I'm out of ideas."  </p>
+        </div>
+        <div class="tile is-child box">
+          <p class="title">Who can use it?</p>
+          <p>If you have access to a mobile device,tablet and or computer you can use the amazing Road Buddy.If you decide to use a tablet or mobile device you will not have to worry about a downgrade in preformance because Road Buddy is mobile friendly! </p>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="tile is-child box">
+          <p class="title">Love it? Let us know.</p>
+          <p>Contact us
+            <div>1(800)-RoadBuddy</div>
+            <div>Email-Roadbuddy@gmail.com</div>
+            <div>Twitter-@Road-Buddy</div>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
   </div>
-  <div>
-    <h2 id="testText"></h2>
-    <p id="address"></p>
-      <img src="" alt="" id="testImage">
-  </div>
-  <div>
-    <h2 id="testText"></h2>
-    <p id="address"></p>
-      <img src="" alt="" id="testImage">
-  </div>
-  <div>
-    <h2 id="testText"></h2>
-    <p id="address"></p>
-      <img src="" alt="" id="testImage">
-  </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -53,5 +74,28 @@
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
    <script src="./assets/js/script.js"></script>
+   <div id="modal-js-example" class="modal">
+    <div class="modal-background"></div>
+  
+    <div class="modal-content">
+      <div class="box">
+        
+        <p id="additional locationsPull">
+          Refresh the page to see your previously searched locations.
+        </p>
+      
+        <!-- Your content -->
+      </div>
+    </div>
+
+  
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+</div>
 </body>
 </html>
+
+
+
+
+
