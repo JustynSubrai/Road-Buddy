@@ -1,3 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', sans-serif;
+}
+
 #map { 
     height: 300px; 
 }
@@ -11,6 +18,10 @@ body {
 h1.title {
   font-size: 45px;
   color: white;
+  display:flex ;
+  justify-content: center;
+  position: relative;
+  top: -6vh;
 }
 
 button {
@@ -61,3 +72,34 @@ h2#testText {
      flex-basis: 0;
   }
 
+.banner {
+  width: 100%;
+  height: 25vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  padding: 0;
+  border: black;
+}
+
+.instructions{
+  padding: 5px;
+  font: bold;
+  font-size: xx-large;
+  display:flex ;
+  
+}
+
+section.section {
+  padding: 0%;
+}
+
+div.container {
+  margin-top: -8vh;
+  margin-bottom: 5vh;
+  margin-left: 3vw;
+}
+
+.tile {
+  padding: 15px;
+}
