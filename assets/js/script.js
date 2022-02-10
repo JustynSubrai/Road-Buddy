@@ -76,11 +76,7 @@ function displayShop(response) {
 
   $("#dataResponse").html(dataEl)
     setShop();
-    // document.querySelector("#testText").innerHTML = response.businesses[0].name
-    // document.querySelector("#testImage").setAttribute("src", response.businesses[0].image_url)
-    // document.getElementById("address").textContent = response.businesses[0].location.display_address
-    // document.querySelector("#cityName").textContent = response.businesses[0].location.city
-    // document.getElementById('thing').value = "";
+    document.getElementById('thing').value = "";
   }
 
 document.getElementById("thingBtn").addEventListener("click", thing);
