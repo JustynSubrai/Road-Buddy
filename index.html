@@ -25,8 +25,7 @@
       <input id="thing" placeholder="Enter a City">
             <button id="thingBtn">Search</button>
       <p class="subtitle" id="cityName"></p>
-      Previous Locations Searched:
-      <p id="locationsPull"></p>
+      
 
       </br>
       </br>
@@ -66,6 +65,29 @@
   </div>
 
 
+  <div id="modal-js-example" class="modal">
+   <div class="modal-background"></div>
+ 
+   <div class="modal-content">
+     <div class="box">
+       
+       <p id="additional locationsPull">
+         Refresh the page to see your previously searched locations.
+       </p>
+     
+       <!-- Your content -->
+
+       Previous Locations Searched:
+       <p id="locationsPull"></p>
+
+
+
+     </div>
+   </div>
+
+  
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
@@ -73,24 +95,7 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
-   <script src="./assets/js/script.js"></script>
-   <div id="modal-js-example" class="modal">
-    <div class="modal-background"></div>
-  
-    <div class="modal-content">
-      <div class="box">
-        
-        <p id="additional locationsPull">
-          Refresh the page to see your previously searched locations.
-        </p>
-      
-        <!-- Your content -->
-      </div>
-    </div>
-
-  
-    <button class="modal-close is-large" aria-label="close"></button>
-  </div>
+  <script src="./assets/js/script.js"></script>
 </div>
 </body>
 </html>
