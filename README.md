@@ -1,5 +1,12 @@
 # Road-Buddy
 
+Please read the following before using:
+
+Our team used Yelp's API, so you will have to allow "Request Access for CORS Anywhere App" if you encounter any issues.
+
+Please click the following link to allow "Request temporary access to the demo server" button:
+https://cors-anywhere.herokuapp.com/corsdemo
+
 # Deployment:
 [Live](https://justynsubrai.github.io/Road-Buddy/)
 
