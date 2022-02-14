@@ -5,10 +5,12 @@
   font-family: 'Georgia', sans-serif;
 }
 
+/* Setting the dimensions for the map */
 #map { 
     height: 300px; 
 }
 
+/* For the rest of the page */
 body {
     background-color: rgba(0, 24, 88, 0.918);
     justify-content: center;

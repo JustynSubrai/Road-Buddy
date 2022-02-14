@@ -15,10 +15,11 @@
     <img class="banner" src="assets\better road.jpg" alt=" image of road in forest">
   <section class="section">
     <div class="container">
+      <!-- Title of our project! -->
       <h1 class="title">
         Road Buddy
       </h1>
-
+<!-- Information to allow for user inputs -->
       <h2 class="instructions">Please input the city that you would like to visit.
       </h2>
       
@@ -31,11 +32,12 @@
       </br>
       
       <div id="map-container"></div>
-
-      <button id="modal" class="js-modal-trigger" data-target="modal-js-example" > Business not showing up? Click me for instructions.</button>
+<!-- Modal pop up for interaction, which also pulls from local storage-->
+      <button id="modal" class="js-modal-trigger" data-target="modal-js-example" > Click me for previously searched locations.</button>
 
   </section>
 
+  <!-- Information about the site and details about it -->
   <div id="dataResponse" class="">
 
     <div class="tile is-ancestor">
@@ -58,7 +60,8 @@
             <div>Twitter-@Road-Buddy</div>
             <div>
             </br>
-          <p class="title">Please read the following before using!</p>
+            <!-- Important information on how to get the yelp API to work -->
+          <p class="title">Please read the following before using:</p>
           <p><mark>Our team used Yelp's API, so you will have to allow "Request Access for CORS Anywhere App" if you encounter any issues.</p>
           Please click the following link to allow "Request temporary access to the demo server" button:
           </br>
@@ -80,15 +83,14 @@
    <div class="modal-content">
      <div class="box">
        
-       <p id="additional locationsPull">
-         Refresh the page to see your previously searched locations.
-       </p>
-     
-       <!-- Your content -->
+   
 
        Previous Locations Searched:
        <p id="locationsPull"></p>
-
+      </br>
+       <p id="additional locationsPull">
+        If you don't see your previous location searched, please refresh the page.
+      </p>
 
 
      </div>

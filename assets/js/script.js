@@ -1,5 +1,6 @@
 var mapEL = $("#map")
 
+// Utilizing the function to start the search and API pull.
 function thing() {
   // console.log(document.querySelector("#thing").value)
   fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=5&location=" + document.querySelector("#thing").value, {
