@@ -37,4 +37,4 @@ HTML, JavaScript, Bulma, CSS, JQuery
 Justyn Subrai, Pablo Lopez-Cordon, Christine Zheng, Rachel Schaaf
 
 #### Screenshot
-! [Image](./images/img1.png)
+! [Image](https://github.com/JustynSubrai/Road-Buddy/blob/develop-main/assets/images/img1.png)
