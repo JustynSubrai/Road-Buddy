@@ -13,7 +13,7 @@ https://cors-anywhere.herokuapp.com/corsdemo
 ## Requirements:
 
 User Story 
-```
+
 AS A user on the road or that highly dislikes to think of a new spot to try, I WANT a webapp that is desktop and mobile friendly that can generate suggestions.
 
 Given I need options of new spots to try. WHEN I enter a city and click SEARCH THEN I am presented with the top 5 favored spots in that city. I'm presented with a MAP of the general area of the first business. The options presented will provide Name, Address and Cost Indicator. WHEN I want to view my previous Cities searched I click on "Click me for previously searched locations" THEN I'm presented with cities search history.
@@ -37,7 +37,7 @@ Have a polished UI.
 Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id-naming conventions, indentation, quality comments, etc.).
 
 Have a quality README - with unique name, description, technologies used, screenshot, and link to deployed application.
-```
+
 ## Technology
 HTML, JavaScript, Bulma, CSS, JQuery
 
